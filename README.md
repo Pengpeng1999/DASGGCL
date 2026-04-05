@@ -57,51 +57,6 @@ Train DASG on Cora dataset with default settings:
 ```bash
 python train.py --dataset 9.cora
 ```
-
-### Custom Configuration
-
-```bash
-python train.py \
-    --dataset 9.cora \
-    --hidden_dim 256 \
-    --out_dim 256 \
-    --num_layers 2 \
-    --tau 0.4 \
-    --lr 0.001 \
-    --num_epochs 400 \
-    --drop_edge_rate_1 0.2 \
-    --drop_edge_rate_2 0.4 \
-    --drop_feature_rate_1 0.3 \
-    --drop_feature_rate_2 0.4 \
-    --rpca_lambda 0.01
-```
-
-### Key Arguments
-
-**Data:**
-- `--data_dir`: Path to dataset directory (default: `./data`)
-- `--dataset`: Dataset name (e.g., `9.cora`, `12.citeseer`, `14.wiki-cs`)
-- `--device`: Device to use (`auto`, `cuda`, `cpu`)
-
-**Model:**
-- `--hidden_dim`: Hidden dimension (default: 256)
-- `--out_dim`: Output dimension (default: 256)
-- `--num_layers`: Number of GCN layers (default: 2)
-- `--tau`: Temperature parameter for contrastive loss (default: 0.4)
-
-**Augmentation:**
-- `--drop_edge_rate_1`: Edge drop rate for view 1 (default: 0.2)
-- `--drop_edge_rate_2`: Edge drop rate for view 2 (default: 0.4)
-- `--drop_feature_rate_1`: Feature drop rate for view 1 (default: 0.3)
-- `--drop_feature_rate_2`: Feature drop rate for view 2 (default: 0.4)
-- `--rpca_lambda`: RPCA sparsity penalty (default: auto)
-
-**Training:**
-- `--lr`: Learning rate (default: 0.001)
-- `--weight_decay`: Weight decay (default: 1e-5)
-- `--num_epochs`: Number of training epochs (default: 400)
-- `--eval_interval`: Evaluation interval (default: 20)
-
 ## Dataset Format
 
 Datasets should be stored as pickle files with the following structure:
@@ -153,19 +108,6 @@ Generate two augmented views with importance-weighted stochastic perturbation:
 - **Edge dropping**: Higher importance → lower drop probability
 - **Feature masking**: Higher importance → lower mask probability
 
-### 5. Contrastive Learning
-
-Train with InfoNCE loss to maximize agreement between corresponding nodes across views.
-
-## Results
-
-Performance on node classification (accuracy %):
-
-| Dataset    | Nodes  | Edges   | GRACE | GCA   | DASG  |
-|------------|--------|---------|-------|-------|-------|
-| Cora       | 2,708  | 5,429   | 83.3  | 83.6  | 85.2  |
-| CiteSeer   | 3,327  | 4,732   | 72.1  | 73.0  | 74.8  |
-| Wiki-CS    | 11,701 | 216,123 | 78.3  | 79.1  | 80.5  |
 
 ## Citation
 
@@ -179,10 +121,6 @@ If you find this code useful, please cite our paper:
   year={2026}
 }
 ```
-
-## License
-
-This project is licensed under the MIT License.
 
 ## Acknowledgments
 
