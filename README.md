@@ -38,7 +38,7 @@ DASGGCL/
 ├── train.py                    # Main training script
 ├── model.py                    # GRACE model implementation
 ├── view_generator.py           # DASG view generator
-├── rpca_global.py             # Low-rank decomposition (RPCA)
+├── rpca_global.py             # Low-rank decomposition
 ├── feature_importance_ls.py   # Laplacian smoothness-based feature importance
 ├── data/                      # Dataset directory
 │   ├── 9.cora.pkl
@@ -71,7 +71,7 @@ Datasets should be stored as pickle files with the following structure:
 
 ## Method Overview
 
-### 1. Low-Rank Decomposition (RPCA)
+### 1. Low-Rank Decomposition
 
 Decompose adjacency matrix into low-rank backbone and sparse noise:
 
