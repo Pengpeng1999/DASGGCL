@@ -11,7 +11,7 @@ DASG proposes a principled augmentation framework that:
 
 ## Key Features
 
-- **Low-rank decomposition (RPCA)**: Decomposes adjacency matrix into global backbone (L) and sparse noise (S)
+- **Low-rank decomposition **: Decomposes adjacency matrix into global backbone (L) and sparse noise (S)
 - **Edge importance**: Derived from low-rank matrix entries |L_ij|
 - **Attribute importance**: Measured via Laplacian smoothness over the low-rank topology
 - **Adaptive augmentation**: Importance-weighted stochastic perturbation for both edges and attributes
